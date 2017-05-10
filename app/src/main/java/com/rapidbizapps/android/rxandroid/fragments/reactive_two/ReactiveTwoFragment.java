@@ -13,12 +13,15 @@ import com.rapidbizapps.android.rxandroid.R;
  * A simple {@link Fragment} subclass.
  */
 public class ReactiveTwoFragment extends Fragment {
-
+    private final String TAG = ReactiveTwoFragment.class.getSimpleName();
 
     public ReactiveTwoFragment() {
         // Required empty public constructor
     }
 
+    public static ReactiveTwoFragment newInstance() {
+        return new ReactiveTwoFragment();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

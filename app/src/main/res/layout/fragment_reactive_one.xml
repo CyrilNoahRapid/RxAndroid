@@ -1,30 +1,27 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:weightSum="10"
+    tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment">
 
-    <RelativeLayout
+    <!--OBSERVER text data-->
+    <TextView
+        android:id="@+id/tv_reactive_one_text_observer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:weightSum="10"
-        tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment">
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5" />
 
-        <!--OBSERVER text data-->
-        <TextView
-            android:id="@+id/tv_reactive_one_text_observer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/dp_5"
-            android:layout_marginTop="@dimen/dp_5" />
+    <!--OBSERVABLE text input-->
+    <EditText
+        android:id="@+id/et_reactive_one_text_observable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:hint="@string/msg_enter_observable_text" />
 
-        <!--OBSERVABLE text input-->
-        <EditText
-            android:id="@+id/et_reactive_one_text_observable"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/dp_5"
-            android:layout_marginEnd="@dimen/dp_5"
-            android:hint="@string/msg_enter_observable_text" />
-
-    </RelativeLayout>
-</layout>
+</RelativeLayout>

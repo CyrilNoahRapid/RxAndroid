@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.data;
+package com.rapidbizapps.android.rxandroid.data.items;
 
 import android.support.v4.app.Fragment;
 

@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <!--Fragment container-->
-    <FrameLayout
-        android:id="@+id/fl_main_fragment_container"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dl_main_navigation_drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
 
-</layout>
+        <!--Fragment container-->
+        <FrameLayout
+            android:id="@+id/fl_main_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--NAVIGATION DRAWER RecyclerView-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_main_navigation_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:clickable="true" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
