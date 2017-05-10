@@ -1,0 +1,28 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:weightSum="10"
+        tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment">
+
+        <!--OBSERVER text data-->
+        <TextView
+            android:id="@+id/tv_reactive_one_text_observer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="9"
+            android:padding="@dimen/dp_10" />
+
+        <!--OBSERVABLE text input-->
+        <EditText
+            android:id="@+id/et_reactive_one_text_observable"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>
