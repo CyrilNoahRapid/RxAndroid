@@ -1,15 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:clickable="true"
+    android:orientation="vertical"
     tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_two.ReactiveTwoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!--GITHUB USER FULLNAME text-->
     <TextView
+        android:id="@+id/tv_reactive_two_github_user_fullname"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dp_5" />
 
-</FrameLayout>
+</LinearLayout>

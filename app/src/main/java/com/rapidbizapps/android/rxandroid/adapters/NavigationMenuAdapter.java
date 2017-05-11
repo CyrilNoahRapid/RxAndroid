@@ -57,7 +57,8 @@ public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAd
     private void bindData(NavItemViewHolder holder, int pos) {
         // Setting the item name.
         holder.tvNavItemName.setText(navItemList.get(pos).getNavItemName());
-
+        // Setting animation to the TextView.
+        setTextAnimation(holder.tvNavItemName);
         // Setting the click listener for Fragment replacement.
         holder.tvNavItemName.setOnClickListener(v -> {
             ((MainActivity) context).replaceFragment(R.id.fl_main_fragment_container,
@@ -71,9 +72,34 @@ public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAd
     private void setTextAnimation(TextView textView) {
         ObjectAnimator animatorStart = ObjectAnimator.ofFloat(textView, "alpha", 0.0f, 1.0f);
         ObjectAnimator animatorEnd = ObjectAnimator.ofFloat(textView, "alpha", 1.0f, 0.0f);
+
         AnimatorSet animatorSet = new AnimatorSet();
-        
+        animatorSet.setDuration(10000);
         animatorSet.playSequentially(animatorStart, animatorEnd);
+        // Looping the animation.
+        animatorSet.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // Restarting the animation immediately after it ends, to create a loop effect.
+                animation.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        animatorSet.start();
     }
 
     /**

@@ -41,7 +41,7 @@ public class MainPresenter implements MainContract.Presenter {
         List<NavItem> navItems = new ArrayList<>();
 
         navItems.add(new NavItem("Reactive One", ReactiveOneFragment.newInstance()));
-        navItems.add(new NavItem("Reactive Two Content", ReactiveTwoFragment.newInstance()));
+        navItems.add(new NavItem("Reactive Two", ReactiveTwoFragment.newInstance()));
         return navItems;
     }
 }
