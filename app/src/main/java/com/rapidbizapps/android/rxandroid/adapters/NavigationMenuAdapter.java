@@ -58,16 +58,15 @@ public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAd
     private void bindData(NavItemViewHolder holder, int pos) {
         // Setting the item name.
         holder.tvNavItemName.setText(navItemList.get(pos).getNavItemName());
+        // Setting animation to the TextView.
+        setTextAnimation(holder.tvNavItemName);
         // Setting the click listener for Fragment replacement.
         holder.tvNavItemName.setOnClickListener(v -> {
-            // Setting animation to the TextView.
-            setTextAnimation(holder.tvNavItemName);
-
             ((MainActivity) context).replaceFragment(R.id.fl_main_fragment_container,
                     navItemList.get(pos).getFragmentToLoad());
 
             // Closing the Navigation Drawer after inflating the fragment.
-//            navigationDrawerHandler.closeNavigationDrawer();
+            navigationDrawerHandler.closeNavigationDrawer();
         });
     }
 

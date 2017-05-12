@@ -39,6 +39,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile 'com.rba.ui:materialdesignlibrary:0.1.8'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'

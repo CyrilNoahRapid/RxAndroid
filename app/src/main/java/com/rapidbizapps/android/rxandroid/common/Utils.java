@@ -1,19 +1,12 @@
-package com.rapidbizapps.android.powerlogdemo.common;
+package com.rapidbizapps.android.rxandroid.common;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
 import android.widget.ProgressBar;
 
-import com.rapidbizapps.android.powerlogdemo.R;
+import com.rapidbizapps.android.rxandroid.R;
 import com.rba.ui.dialog.MaterialDialog;
 import com.rba.ui.dialog.Theme;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-
-import static com.rapidbizapps.android.powerlogdemo.common.GlobalConstants.baseUrl;
 
 /**
  * Utils contains all the required common methods.
@@ -37,17 +30,13 @@ public class Utils {
                     .theme(Theme.LIGHT)
                     .cancelable(false)
                     .show();
-            ringProgressDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                @Override
-                public void onShow(DialogInterface dialog) {
-
-                    try {
-                        ProgressBar v = (ProgressBar) ringProgressDialog.findViewById(android.R.id.progress);
-                        v.getIndeterminateDrawable().setColorFilter(ctx.getResources().getColor(R.color.colorAccent),
-                                android.graphics.PorterDuff.Mode.MULTIPLY);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            ringProgressDialog.setOnShowListener(dialog -> {
+                try {
+                    ProgressBar v = (ProgressBar) ringProgressDialog.findViewById(android.R.id.progress);
+                    v.getIndeterminateDrawable().setColorFilter(ctx.getResources().getColor(R.color.colorAccent),
+                            android.graphics.PorterDuff.Mode.MULTIPLY);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             });
         }
@@ -68,17 +57,13 @@ public class Utils {
                     .theme(Theme.LIGHT)
                     .cancelable(false)
                     .show();
-            ringProgressDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                @Override
-                public void onShow(DialogInterface dialog) {
-
-                    try {
-                        ProgressBar v = (ProgressBar) ringProgressDialog.findViewById(android.R.id.progress);
-                        v.getIndeterminateDrawable().setColorFilter(ctx.getResources().getColor(R.color.colorAccent),
-                                android.graphics.PorterDuff.Mode.MULTIPLY);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            ringProgressDialog.setOnShowListener(dialog -> {
+                try {
+                    ProgressBar v = (ProgressBar) ringProgressDialog.findViewById(android.R.id.progress);
+                    v.getIndeterminateDrawable().setColorFilter(ctx.getResources().getColor(R.color.colorAccent),
+                            android.graphics.PorterDuff.Mode.MULTIPLY);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             });
         }
@@ -94,35 +79,6 @@ public class Utils {
                 ringProgressDialog = null;
             }
         }
-    }
-
-
-    /**
-     * Creates a file for the image captured and returns it
-     *
-     * @param image the captured image
-     */
-    public File getFile(Bitmap image) {
-        File file = null;
-
-        final String DEFAULT_CURRENT_DIRECTORY = baseUrl;
-        try {
-            File root = new File(DEFAULT_CURRENT_DIRECTORY);
-            root.mkdirs();
-            String imagePath = "temp.png";
-            file = new File(root, imagePath);
-            file.createNewFile();
-            FileOutputStream fOut = new FileOutputStream(file);
-            image.compress(Bitmap.CompressFormat.PNG, 100, fOut);
-            OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
-            myOutWriter.close();
-            fOut.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return file;
     }
 
     /**
