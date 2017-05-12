@@ -2,6 +2,7 @@ package com.rapidbizapps.android.rxandroid.fragments.reactive_two;
 
 import android.support.annotation.NonNull;
 
+import com.rapidbizapps.android.rxandroid.data.common.DataRefinery;
 import com.rapidbizapps.android.rxandroid.data.common.RetroDataHelper;
 import com.rapidbizapps.android.rxandroid.data.models.User;
 
@@ -20,24 +21,24 @@ public class ReactiveTwoPresenter implements ReactiveTwoContract.Presenter {
 
     @Override
     public void start() {
-
+        // TODO: Write any initial processing code, if required. (12/May/2017).
     }
 
     @Override
     public void getUserDetails(String username) {
-        RetroDataHelper dataHelper = new RetroDataHelper();
+        DataRefinery dataRefinery = new DataRefinery();
         mView.showProgressBar();
-        dataHelper.getUserDetails(new RetroDataHelper.UserResponseCallback() {
+        dataRefinery.provideUserFullName(new DataRefinery.DecoratedUserDetailsCallback() {
             @Override
-            public void onSuccess(User user) {
+            public void success(String fullName) {
                 mView.dismissProgressBar();
-                mView.showFullName(user.getName());
+                mView.showFullName(fullName);
             }
 
             @Override
-            public void onFailure(Throwable e) {
+            public void failure(String errorMessage) {
                 mView.dismissProgressBar();
-                mView.showErrorMessage(e.getMessage());
+                mView.showErrorMessage(errorMessage);
             }
         }, username);
     }

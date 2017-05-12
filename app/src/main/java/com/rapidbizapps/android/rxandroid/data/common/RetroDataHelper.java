@@ -10,14 +10,13 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Provides required response to the calling classes/
  */
 public class RetroDataHelper implements DataConstants {
-    private UserResponseCallback mUserResponseCallback;
     private Retrofit retrofit;
 
     public RetroDataHelper() {
@@ -27,35 +26,35 @@ public class RetroDataHelper implements DataConstants {
     /**
      * Method to get GitHub user retails.
      *
-     * @param callback Response callback.
+     * @param callback {@link UserResponseCallback}
      * @param username GitHub Username.
      */
     public void getUserDetails(UserResponseCallback callback, String username) {
         RetroApi retroApi = retrofit.create(RetroApi.class);
         Observable<User> gitHubUser = retroApi.getUserDetails(username);
-        gitHubUser.subscribeOn(Schedulers.newThread());
-        gitHubUser.observeOn(AndroidSchedulers.mainThread());
-        gitHubUser.subscribe(new Observer<User>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
+        gitHubUser.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<User>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(@NonNull User user) {
-                callback.onSuccess(user);
-            }
+                    @Override
+                    public void onNext(@NonNull User user) {
+                        callback.onSuccess(user);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
-                callback.onFailure(e);
-            }
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        callback.onFailure(e);
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 
 
@@ -64,7 +63,7 @@ public class RetroDataHelper implements DataConstants {
      */
     private void setupRetro() {
         retrofit = new Retrofit.Builder()
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();

@@ -3,6 +3,7 @@ package com.rapidbizapps.android.rxandroid.adapters;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -57,24 +58,29 @@ public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAd
     private void bindData(NavItemViewHolder holder, int pos) {
         // Setting the item name.
         holder.tvNavItemName.setText(navItemList.get(pos).getNavItemName());
-        // Setting animation to the TextView.
-        setTextAnimation(holder.tvNavItemName);
         // Setting the click listener for Fragment replacement.
         holder.tvNavItemName.setOnClickListener(v -> {
+            // Setting animation to the TextView.
+            setTextAnimation(holder.tvNavItemName);
+
             ((MainActivity) context).replaceFragment(R.id.fl_main_fragment_container,
                     navItemList.get(pos).getFragmentToLoad());
 
             // Closing the Navigation Drawer after inflating the fragment.
-            navigationDrawerHandler.closeNavigationDrawer();
+//            navigationDrawerHandler.closeNavigationDrawer();
         });
     }
 
     private void setTextAnimation(TextView textView) {
-        ObjectAnimator animatorStart = ObjectAnimator.ofFloat(textView, "alpha", 0.0f, 1.0f);
-        ObjectAnimator animatorEnd = ObjectAnimator.ofFloat(textView, "alpha", 1.0f, 0.0f);
+        ObjectAnimator animatorStart = ObjectAnimator.ofPropertyValuesHolder(textView,
+                PropertyValuesHolder.ofFloat("scaleX", 2f),
+                PropertyValuesHolder.ofFloat("scaleY", 2f));
+        ObjectAnimator animatorEnd = ObjectAnimator.ofPropertyValuesHolder(textView,
+                PropertyValuesHolder.ofFloat("scaleX", 1f),
+                PropertyValuesHolder.ofFloat("scaleY", 1f));
 
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.setDuration(10000);
+        animatorSet.setDuration(1000);
         animatorSet.playSequentially(animatorStart, animatorEnd);
         // Looping the animation.
         animatorSet.addListener(new Animator.AnimatorListener() {

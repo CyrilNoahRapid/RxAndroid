@@ -11,6 +11,6 @@ import retrofit2.http.Path;
  */
 public interface RetroApi {
 
-    @GET("user/{username}")
+    @GET("users/{username}")
     Observable<User> getUserDetails(@Path("username") String userName);
 }
