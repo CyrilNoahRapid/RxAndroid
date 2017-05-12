@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rapidbizapps.android.rxandroid.R;
+import com.rapidbizapps.android.rxandroid.common.Utils;
 import com.rapidbizapps.android.rxandroid.fragments.FragmentViewInitializer;
 
 /**
@@ -18,6 +19,7 @@ import com.rapidbizapps.android.rxandroid.fragments.FragmentViewInitializer;
 public class ReactiveTwoFragment extends Fragment implements FragmentViewInitializer, ReactiveTwoContract.View {
     private final String TAG = ReactiveTwoFragment.class.getSimpleName();
 
+    private Utils mUtils;
     private ReactiveTwoContract.Presenter mPresenter;
 
     private TextView tvGitHubUserFullName;
@@ -38,6 +40,7 @@ public class ReactiveTwoFragment extends Fragment implements FragmentViewInitial
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mUtils = new Utils();
         View rootView = inflater.inflate(R.layout.fragment_reactive_two, container, false);
 
         initViews(rootView);                                // Initializing Views.
@@ -59,12 +62,12 @@ public class ReactiveTwoFragment extends Fragment implements FragmentViewInitial
 
     @Override
     public void showProgressBar() {
-
+        mUtils.showProgressDialog(getContext());
     }
 
     @Override
     public void dismissProgressBar() {
-
+        mUtils.dismissDialog();
     }
 
     @Override

@@ -24,7 +24,7 @@ public class Utils {
     public void showProgressDialog(final Context ctx) {
         if (ringProgressDialog == null) {
             ringProgressDialog = new MaterialDialog.Builder(ctx)
-                    //.title(ctx.getResources().getString(R.string.app_name))
+                    .title(ctx.getResources().getString(R.string.app_name))
                     .content("Please wait.... ")
                     .progress(true, 0)
                     .theme(Theme.LIGHT)

@@ -59,7 +59,7 @@ public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAd
         // Setting the item name.
         holder.tvNavItemName.setText(navItemList.get(pos).getNavItemName());
         // Setting animation to the TextView.
-        setTextAnimation(holder.tvNavItemName);
+//        setTextAnimation(holder.tvNavItemName); // TODO: Enable animation if required.
         // Setting the click listener for Fragment replacement.
         holder.tvNavItemName.setOnClickListener(v -> {
             ((MainActivity) context).replaceFragment(R.id.fl_main_fragment_container,
