@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.activities.main;
+package com.rapidbizapps.android.rxandroid.usecases.activities.main;
 
 import com.rapidbizapps.android.rxandroid.architecture.mvp.BasePresenter;
 import com.rapidbizapps.android.rxandroid.architecture.mvp.BaseView;

@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.fragments.reactive_two;
+package com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_two;
 
 
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.rapidbizapps.android.rxandroid.R;
 import com.rapidbizapps.android.rxandroid.common.Utils;
-import com.rapidbizapps.android.rxandroid.fragments.FragmentViewInitializer;
+import com.rapidbizapps.android.rxandroid.usecases.fragments.FragmentViewInitializer;
 
 /**
  * A simple {@link Fragment} subclass.

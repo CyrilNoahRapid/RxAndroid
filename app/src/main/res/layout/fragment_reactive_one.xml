@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:weightSum="10"
-    tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment">
+    tools:context=".usecases.fragments.reactive_one.ReactiveOneFragment">
 
     <!--OBSERVER text data-->
     <TextView

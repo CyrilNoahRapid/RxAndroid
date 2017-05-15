@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:clickable="true"
     android:orientation="vertical"
-    tools:context="com.rapidbizapps.android.rxandroid.fragments.reactive_two.ReactiveTwoFragment">
+    tools:context=".usecases.fragments.reactive_two.ReactiveTwoFragment">
 
     <!--GITHUB USER FULLNAME text-->
     <TextView

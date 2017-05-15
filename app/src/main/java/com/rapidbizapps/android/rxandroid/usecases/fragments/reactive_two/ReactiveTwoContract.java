@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.fragments.reactive_two;
+package com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_two;
 
 import com.rapidbizapps.android.rxandroid.architecture.mvp.BasePresenter;
 import com.rapidbizapps.android.rxandroid.architecture.mvp.BaseView;

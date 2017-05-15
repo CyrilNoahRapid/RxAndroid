@@ -1,10 +1,8 @@
-package com.rapidbizapps.android.rxandroid.fragments.reactive_two;
+package com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_two;
 
 import android.support.annotation.NonNull;
 
 import com.rapidbizapps.android.rxandroid.data.common.DataRefinery;
-import com.rapidbizapps.android.rxandroid.data.common.RetroDataHelper;
-import com.rapidbizapps.android.rxandroid.data.models.User;
 
 /**
  * MVP Presenter for Reactive Two Fragment.

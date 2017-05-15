@@ -1,10 +1,10 @@
-package com.rapidbizapps.android.rxandroid.activities.main;
+package com.rapidbizapps.android.rxandroid.usecases.activities.main;
 
 import android.support.annotation.NonNull;
 
 import com.rapidbizapps.android.rxandroid.data.items.NavItem;
-import com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment;
-import com.rapidbizapps.android.rxandroid.fragments.reactive_two.ReactiveTwoFragment;
+import com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_one.ReactiveOneFragment;
+import com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_two.ReactiveTwoFragment;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.activities.main;
+package com.rapidbizapps.android.rxandroid.usecases.activities.main;
 
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -7,10 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.rapidbizapps.android.rxandroid.R;
-import com.rapidbizapps.android.rxandroid.activities.BaseActivity;
+import com.rapidbizapps.android.rxandroid.usecases.activities.BaseActivity;
 import com.rapidbizapps.android.rxandroid.adapters.NavigationMenuAdapter;
 import com.rapidbizapps.android.rxandroid.data.items.NavItem;
-import com.rapidbizapps.android.rxandroid.fragments.reactive_one.ReactiveOneFragment;
+import com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_one.ReactiveOneFragment;
 
 import java.util.List;
 

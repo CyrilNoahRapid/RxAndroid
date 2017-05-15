@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.activities;
+package com.rapidbizapps.android.rxandroid.usecases.activities;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

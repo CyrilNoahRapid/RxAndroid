@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.fragments.reactive_one;
+package com.rapidbizapps.android.rxandroid.usecases.fragments.reactive_one;
 
 
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.rapidbizapps.android.rxandroid.R;
-import com.rapidbizapps.android.rxandroid.fragments.FragmentViewInitializer;
+import com.rapidbizapps.android.rxandroid.usecases.fragments.FragmentViewInitializer;
 
 import io.reactivex.Observable;
 

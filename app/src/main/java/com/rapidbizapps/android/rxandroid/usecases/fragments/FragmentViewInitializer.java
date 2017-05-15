@@ -1,4 +1,4 @@
-package com.rapidbizapps.android.rxandroid.fragments;
+package com.rapidbizapps.android.rxandroid.usecases.fragments;
 
 import android.view.View;
 

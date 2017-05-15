@@ -9,11 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationSet;
 import android.widget.TextView;
 
 import com.rapidbizapps.android.rxandroid.R;
-import com.rapidbizapps.android.rxandroid.activities.main.MainActivity;
+import com.rapidbizapps.android.rxandroid.usecases.activities.main.MainActivity;
 import com.rapidbizapps.android.rxandroid.data.items.NavItem;
 
 import java.util.List;
