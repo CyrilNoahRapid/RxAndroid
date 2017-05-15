@@ -1,13 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".usecases.fragments.reactive_three.ReactiveThreeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <!--EXPAND BOTTOM SHEET button-->
+        <Button
+            android:id="@+id/btn_reactive_three_expand_bottom_sheet"
+            android:text="Show Bottom Sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <!--BOTTOM -->
+    <android.support.v4.widget.NestedScrollView
+        android:background="#ccc111"
+        android:id="@+id/nsv_reactive_three_bottom_sheet"
+        android:layout_width="match_parent"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        android:layout_height="@dimen/dp_300" >
+
+        <TextView
+            android:text="@string/msg_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
